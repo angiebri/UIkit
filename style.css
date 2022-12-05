@@ -1,17 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;800&display=swap');
+/*@import url('/fonts/ui-icons/style.css');*/
 
 :root {
 
 /*Style Guide*/
---primary: rgb(3, 72, 120);
---default: rgba(231, 223, 223, 0.932);
+--primary: #2D74FF;
+--default:#EAEDF3;
 --light: #fff;
---gray: rgb(148, 140, 140);
+--grey: #96A6C2;
 
 --margin: 8px;
 
 --font_family: 'Open Sans', sans-serif;
---font_weight_regular: 300;
+--font_weight_regular: 400;
 --font_weight_bold: 600;
 
 --font_regular_1: var(--font_weight_regular) 11px/1.2rem var(--font_family);
@@ -39,33 +40,45 @@
 --font_bold_11: var(--font_weight_bold) 34px/11.2rem var(--font_family);
 }
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Open Sans', sans-serif;
     font-size: 18px; /*размер шрифта по умолчанию */
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
     width: 100%;
     height: 100vh;
 }
 
-.wrapper,
-.wrapper_2{
+.wrapper {
     width: 300px;
-    background-color: #999;
-    padding: 8px;
+    border-radius: 16px;
+    padding: 8px 16px;
+    border: 1px solid var(--grey);
+    margin-right: 16px;
+    text-align: center;
+}
+
+.wrapper .button {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .wrapper .button:not(:last-child) { /*все кнопки кроме последней*/
     margin-bottom: calc(var(--margin) * 2);
 }
 
-.wrapper_2 {
-    margin-top: 70px; /* не задавать margin в кнопке*/
+h3 {
+    font: var(--font_regular_8);
 }
 
 .button {
+    cursor: pointer;
     height: 50px;
     width: 100%;
     background: var(--primary);
@@ -74,10 +87,44 @@ body {
     justify-content: center;
     align-items: center;
     border-radius: 8px;
-    font: var(--font_regular_8);
+    padding: 0 14px;
+    font: var(--font_regular_7);
 }
 
-.button_default {
+.button_theme-default {
     background: var(--default);
-    color: var(--gray);
+    color: var(--grey);
+}
+
+.button_theme-light {
+    background: transparent;
+    color: var(--primary);
+}
+
+.button_theme-light-default {
+    background: transparent;
+    color: var(--grey);
+}
+
+.button_load {
+    pointer-events: none; /*запрещаем событие по клику*/
+    font-size: 24px;
+}
+
+.button_load i.ui_load {
+    animation: loading 1.2s linear infinite;
+}
+
+@keyframes loading { /*анимация*/
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.button_small {
+    min-width: 200px;
+    width: max-content;
 }
