@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;800&display=swap');
+
+:root {
+
+/*Style Guide*/
+--primary: rgb(3, 72, 120);
+--default: rgba(231, 223, 223, 0.932);
+--light: #fff;
+--gray: rgb(148, 140, 140);
+
+--margin: 8px;
+
+--font_family: 'Open Sans', sans-serif;
+--font_weight_regular: 300;
+--font_weight_bold: 600;
+
+--font_regular_1: var(--font_weight_regular) 11px/1.2rem var(--font_family);
+--font_regular_2: var(--font_weight_regular) 12px/1.2rem var(--font_family);
+--font_regular_3: var(--font_weight_regular) 13px/1.2rem var(--font_family);
+--font_regular_4: var(--font_weight_regular) 15px/1.2rem var(--font_family);
+--font_regular_5: var(--font_weight_regular) 16px/1.2rem var(--font_family);
+--font_regular_6: var(--font_weight_regular) 17px/1.2rem var(--font_family);
+--font_regular_7: var(--font_weight_regular) 18px/1.2rem var(--font_family);
+--font_regular_8: var(--font_weight_regular) 20px/1.2rem var(--font_family);
+--font_regular_9: var(--font_weight_regular) 22px/1.2rem var(--font_family);
+--font_regular_10: var(--font_weight_regular) 28px/1.2rem var(--font_family);
+--font_regular_11: var(--font_weight_regular) 34px/1.2rem var(--font_family);
+
+--font_bold_1: var(--font_weight_bold) 11px/11.2rem var(--font_family);
+--font_bold_2: var(--font_weight_bold) 12px/11.2rem var(--font_family);
+--font_bold_3: var(--font_weight_bold) 13px/11.2rem var(--font_family);
+--font_bold_4: var(--font_weight_bold) 15px/11.2rem var(--font_family);
+--font_bold_5: var(--font_weight_bold) 16px/11.2rem var(--font_family);
+--font_bold_6: var(--font_weight_bold) 17px/11.2rem var(--font_family);
+--font_bold_7: var(--font_weight_bold) 18px/11.2rem var(--font_family);
+--font_bold_8: var(--font_weight_bold) 20px/11.2rem var(--font_family);
+--font_bold_9: var(--font_weight_bold) 22px/11.2rem var(--font_family);
+--font_bold_10: var(--font_weight_bold) 28px/11.2rem var(--font_family);
+--font_bold_11: var(--font_weight_bold) 34px/11.2rem var(--font_family);
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px; /*размер шрифта по умолчанию */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+}
+
+.wrapper,
+.wrapper_2{
+    width: 300px;
+    background-color: #999;
+    padding: 8px;
+}
+
+.wrapper .button:not(:last-child) { /*все кнопки кроме последней*/
+    margin-bottom: calc(var(--margin) * 2);
+}
+
+.wrapper_2 {
+    margin-top: 70px; /* не задавать margin в кнопке*/
+}
+
+.button {
+    height: 50px;
+    width: 100%;
+    background: var(--primary);
+    color: var(--light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    font: var(--font_regular_8);
+}
+
+.button_default {
+    background: var(--default);
+    color: var(--gray);
+}
